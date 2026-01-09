@@ -15,7 +15,14 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-glacier hover:text-ocean transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-glacier hover:text-ocean transition-colors"><Linkedin size={20} /></a>
+              <a
+                href="https://www.linkedin.com/company/kiligrid-technology"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-white/5 rounded-lg hover:bg-glacier hover:text-ocean transition-colors"
+              >
+                <Linkedin size={20} />
+              </a>
               <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-glacier hover:text-ocean transition-colors"><Instagram size={20} /></a>
             </div>
           </div>
