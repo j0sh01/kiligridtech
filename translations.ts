@@ -10,7 +10,7 @@ export const translations = {
       contact: "Consultation"
     },
     hero: {
-      tagline: "Unifying Enterprise Systems",
+      tagline: "Secure . Grid . Integrate",
       headline: "Building Secure, Scalable Systems That Power Business Growth",
       subheadline: "We design and deliver resilient digital infrastructures that scale with your ambitions, secure by design, engineered for sustained growth.",
       ctaPrimary: "Explore Services",
