@@ -101,6 +101,7 @@ export const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Sales',
+    telephone: '+255 744 862 577',
     availableLanguage: ['English', 'Swahili']
   },
   sameAs: [
