@@ -11,6 +11,7 @@ const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Solutions = lazy(() => import('./pages/Solutions'));
 const Products = lazy(() => import('./pages/Products'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const Loading = () => (
   <div className="h-screen w-full flex items-center justify-center bg-snow dark:bg-[#0A0F1D]">
@@ -36,6 +37,7 @@ const App: React.FC = () => {
                 <Route path="/products" element={<Products />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
           </main>

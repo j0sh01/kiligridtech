@@ -41,6 +41,17 @@ export const translations = {
       about: "About",
       contact: "Consultation"
     },
+    notFound: {
+      title: "404 - Page Not Found",
+      description: "The page you're looking for doesn't exist. Return to KiliGrid Technology homepage or explore our IT services and solutions.",
+      heading: "Page Not Found",
+      message: "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+      homeButton: "Back to Home",
+      backButton: "Go Back",
+      quickLinks: "Quick Links",
+      emailUs: "Email Us",
+      errorCode: "Error 404 - Page Not Found"
+    },
     hero: {
       tagline: "Secure . Grid . Integrate",
       headline: "Building Secure, Scalable Systems That Power Business Growth",
@@ -155,6 +166,17 @@ export const translations = {
       products: "Vifaa",
       about: "Kuhusu Sisi",
       contact: "Ushauri"
+    },
+    notFound: {
+      title: "404 - Ukurasa Haupatikani",
+      description: "Ukurasa unaoutafuta haupo. Rudi kwenye ukurasa wa nyumbani wa KiliGrid Technology au chunguza huduma na suluhisho zetu za IT.",
+      heading: "Ukurasa Haupatikani",
+      message: "Ukurasa unaoutafuta haupo au umehamishwa. Hebu tukurudishe kwenye njia sahihi.",
+      homeButton: "Rudi Nyumbani",
+      backButton: "Rudi Nyuma",
+      quickLinks: "Viungo vya Haraka",
+      emailUs: "Tuma Barua Pepe",
+      errorCode: "Kosa 404 - Ukurasa Haupatikani"
     },
     hero: {
       tagline: "Kuunganisha Mifumo ya Biashara",
