@@ -3,13 +3,37 @@ import React from 'react';
 import { useApp } from '../AppContext';
 import { translations } from '../translations';
 import { Target, Lightbulb, TrendingUp, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
+import { generateWebPageSchema, generateBreadcrumbSchema, combineSchemas } from '../utils/structuredData';
+import { organizationSchema } from '../config/seo.config';
 
 const About: React.FC = () => {
   const { lang } = useApp();
   const t = translations[lang];
 
+  const structuredData = combineSchemas(
+    organizationSchema,
+    generateWebPageSchema({
+      name: t.seo.about.title,
+      description: t.seo.about.description,
+      url: 'https://kiligridtech.com/#/about'
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: 'https://kiligridtech.com/' },
+      { name: 'About', url: 'https://kiligridtech.com/#/about' }
+    ])
+  );
+
   return (
-    <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
+    <>
+      <SEO
+        title={t.seo.about.title}
+        description={t.seo.about.description}
+        keywords={t.seo.about.keywords}
+        lang={lang}
+        structuredData={structuredData}
+      />
+      <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
           <h1 className="text-6xl lg:text-8xl font-black text-ocean dark:text-white mb-8">
@@ -68,6 +92,7 @@ const About: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -4,13 +4,35 @@ import { MODULES, INDUSTRIES } from '../constants';
 import { useApp } from '../AppContext';
 import { translations } from '../translations';
 import { ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
+import { generateWebPageSchema, generateBreadcrumbSchema, combineSchemas } from '../utils/structuredData';
 
 const Solutions: React.FC = () => {
   const { lang } = useApp();
   const t = translations[lang];
 
+  const structuredData = combineSchemas(
+    generateWebPageSchema({
+      name: t.seo.solutions.title,
+      description: t.seo.solutions.description,
+      url: 'https://kiligridtech.com/#/solutions'
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: 'https://kiligridtech.com/' },
+      { name: 'Solutions', url: 'https://kiligridtech.com/#/solutions' }
+    ])
+  );
+
   return (
-    <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
+    <>
+      <SEO
+        title={t.seo.solutions.title}
+        description={t.seo.solutions.description}
+        keywords={t.seo.solutions.keywords}
+        lang={lang}
+        structuredData={structuredData}
+      />
+      <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h1 className="text-6xl lg:text-7xl font-black text-ocean dark:text-white mb-6">{t.solutions.title}</h1>
@@ -76,6 +98,7 @@ const Solutions: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

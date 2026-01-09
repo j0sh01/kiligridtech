@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Page -->
+  <url>
+    <loc>https://kiligridtech.com/</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiligridtech.com/" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://kiligridtech.com/" />
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://kiligridtech.com/#/services</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiligridtech.com/#/services" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://kiligridtech.com/#/services" />
+  </url>
+
+  <!-- Solutions Page -->
+  <url>
+    <loc>https://kiligridtech.com/#/solutions</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiligridtech.com/#/solutions" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://kiligridtech.com/#/solutions" />
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://kiligridtech.com/#/products</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiligridtech.com/#/products" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://kiligridtech.com/#/products" />
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://kiligridtech.com/#/about</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiligridtech.com/#/about" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://kiligridtech.com/#/about" />
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://kiligridtech.com/#/contact</loc>
+    <lastmod>2026-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiligridtech.com/#/contact" />
+    <xhtml:link rel="alternate" hreflang="sw" href="https://kiligridtech.com/#/contact" />
+  </url>
+
+</urlset>
+

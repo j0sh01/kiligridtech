@@ -6,13 +6,34 @@ import { ArrowRight, CheckCircle2, TrendingUp, Cpu, ExternalLink, Globe, Layout,
 import ROICalculator from '../components/ROICalculator';
 import { useApp } from '../AppContext';
 import { translations } from '../translations';
+import SEO from '../components/SEO';
+import { organizationSchema, localBusinessSchema } from '../config/seo.config';
+import { combineSchemas, generateWebPageSchema } from '../utils/structuredData';
 
 const Home: React.FC = () => {
   const { lang } = useApp();
   const t = translations[lang];
 
+  const structuredData = combineSchemas(
+    organizationSchema,
+    localBusinessSchema,
+    generateWebPageSchema({
+      name: t.seo.home.title,
+      description: t.seo.home.description,
+      url: 'https://kiligridtech.com/'
+    })
+  );
+
   return (
-    <div className="relative overflow-hidden bg-snow dark:bg-[#0A0F1D]">
+    <>
+      <SEO
+        title={t.seo.home.title}
+        description={t.seo.home.description}
+        keywords={t.seo.home.keywords}
+        lang={lang}
+        structuredData={structuredData}
+      />
+      <div className="relative overflow-hidden bg-snow dark:bg-[#0A0F1D]">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -115,6 +136,7 @@ const Home: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

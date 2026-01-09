@@ -2,10 +2,24 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 import { useApp } from '../AppContext';
 import { translations } from '../translations';
+import SEO from '../components/SEO';
+import { generateWebPageSchema, generateBreadcrumbSchema, combineSchemas } from '../utils/structuredData';
 
 const Contact: React.FC = () => {
   const { lang } = useApp();
   const t = translations[lang];
+
+  const structuredData = combineSchemas(
+    generateWebPageSchema({
+      name: t.seo.contact.title,
+      description: t.seo.contact.description,
+      url: 'https://kiligridtech.com/#/contact'
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: 'https://kiligridtech.com/' },
+      { name: 'Contact', url: 'https://kiligridtech.com/#/contact' }
+    ])
+  );
 
   // Form state
   const [formData, setFormData] = useState({
@@ -69,7 +83,15 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
+    <>
+      <SEO
+        title={t.seo.contact.title}
+        description={t.seo.contact.description}
+        keywords={t.seo.contact.keywords}
+        lang={lang}
+        structuredData={structuredData}
+      />
+      <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Left info section */}
@@ -201,6 +223,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

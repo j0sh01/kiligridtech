@@ -5,13 +5,35 @@ import { CheckCircle2, ArrowRight, Image as ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../AppContext';
 import { translations } from '../translations';
+import SEO from '../components/SEO';
+import { generateWebPageSchema, generateBreadcrumbSchema, combineSchemas } from '../utils/structuredData';
 
 const Services: React.FC = () => {
   const { lang } = useApp();
   const t = translations[lang];
 
+  const structuredData = combineSchemas(
+    generateWebPageSchema({
+      name: t.seo.services.title,
+      description: t.seo.services.description,
+      url: 'https://kiligridtech.com/#/services'
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: 'https://kiligridtech.com/' },
+      { name: 'Services', url: 'https://kiligridtech.com/#/services' }
+    ])
+  );
+
   return (
-    <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
+    <>
+      <SEO
+        title={t.seo.services.title}
+        description={t.seo.services.description}
+        keywords={t.seo.services.keywords}
+        lang={lang}
+        structuredData={structuredData}
+      />
+      <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-24">
           <h1 className="text-6xl font-black text-ocean dark:text-white mb-8 leading-tight">
@@ -69,6 +91,7 @@ const Services: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

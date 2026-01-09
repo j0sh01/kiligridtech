@@ -3,10 +3,24 @@ import React from 'react';
 import { useApp } from '../AppContext';
 import { translations } from '../translations';
 import { Server, Shield, Camera, Wifi, HardDrive } from 'lucide-react';
+import SEO from '../components/SEO';
+import { generateWebPageSchema, generateBreadcrumbSchema, combineSchemas } from '../utils/structuredData';
 
 const Products: React.FC = () => {
   const { lang } = useApp();
   const t = translations[lang];
+
+  const structuredData = combineSchemas(
+    generateWebPageSchema({
+      name: t.seo.products.title,
+      description: t.seo.products.description,
+      url: 'https://kiligridtech.com/#/products'
+    }),
+    generateBreadcrumbSchema([
+      { name: 'Home', url: 'https://kiligridtech.com/' },
+      { name: 'Products', url: 'https://kiligridtech.com/#/products' }
+    ])
+  );
 
   const categories = [
     { 
@@ -32,7 +46,15 @@ const Products: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
+    <>
+      <SEO
+        title={t.seo.products.title}
+        description={t.seo.products.description}
+        keywords={t.seo.products.keywords}
+        lang={lang}
+        structuredData={structuredData}
+      />
+      <div className="pt-32 pb-24 bg-snow dark:bg-[#0A0F1D]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
           <h1 className="text-6xl font-black text-ocean dark:text-white mb-6">
@@ -78,6 +100,7 @@ const Products: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
